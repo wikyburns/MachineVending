@@ -6,7 +6,3 @@ cd MachineVending
 cd docker
 docker-compose up
 ```
-
-
-
-
