@@ -7,16 +7,18 @@
  */
 declare(strict_types = 1);
 
-abstract class FloatValueObject
+namespace App\shared\Domain\ValueObjects;
+
+abstract class IntValueObject
 {
     private $value;
 
-    public function __construct(float $value)
+    public function __construct(int $value)
     {
         $this->value = $value;
     }
 
-    public function value(): float
+    public function value(): int
     {
         return $this->value;
     }
@@ -25,5 +27,4 @@ abstract class FloatValueObject
     {
         return (string) $this->value();
     }
-
 }
