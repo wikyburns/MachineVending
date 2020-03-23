@@ -15,13 +15,13 @@ use DomainException;
 
 class ProductName extends StringValueObject
 {
-//    private const WATER = 'water';
-//    private const SODA = 'soda';
-//    private const JUICE = 'juice';
+    private const WATER = 'water';
+    private const SODA = 'soda';
+    private const JUICE = 'juice';
 
     public function __construct(string $value)
     {
-        parent::__construct($value);
+        parent::__construct(strtolower($value));
         $this->greatherThanTwoCharacters();
         $this->isValidName();
     }
@@ -34,6 +34,8 @@ class ProductName extends StringValueObject
 
     private function isValidName()
     {
-       // TODO: Validate the acceptable names
+       if(!in_array($this->value(), array(self::WATER, self::SODA, self::JUICE)))
+           throw new DomainException('ProductName not valid, expected(juice, water, soda)');
+
     }
 }
