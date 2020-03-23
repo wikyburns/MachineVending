@@ -6,7 +6,9 @@
  * Time: 12:33
  */
 
-abstract class DomainError extends DomainException
+namespace App\shared\Domain;
+
+abstract class DomainError extends \DomainException
 {
     public function __construct()
     {
@@ -14,6 +16,6 @@ abstract class DomainError extends DomainException
     }
 
     abstract public function errorCode(): string;
-    abstract public function errorMessage(): string;
+    abstract protected function errorMessage(): string;
 
 }

@@ -48,4 +48,9 @@ class Product
         return $this->stock;
     }
 
+    public function updateStock(ProductStock $stock): void
+    {
+        $this->stock = $stock;
+    }
+
 }

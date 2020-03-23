@@ -7,3 +7,8 @@ find:
     path: /product
     controller: App\Controller\Product\FindProductGetController
     methods: [GET]
+
+update:
+    path: /product
+    controller: App\Controller\Product\UpdateStockProductPutController
+    methods: [PUT]

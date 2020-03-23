@@ -11,6 +11,7 @@ namespace App\Product\Application\Find;
 
 use App\Product\Domain\Product;
 use App\Product\Domain\ProductName;
+use App\Product\Domain\ProductNotExist;
 use App\Product\Domain\ProductRepository;
 
 final class ProductFinder
@@ -25,13 +26,13 @@ final class ProductFinder
 
     public function find(ProductName $name): ?Product
     {
-        $course = $this->repository->findByName($name);
+        $product = $this->repository->findByName($name);
 
-        if (null === $course) {
-            throw new \DomainException('Product with name <'.$name.'> not found');
+        if (null === $product) {
+            throw new ProductNotExist($name);
         }
 
-        return $course;
+        return $product;
     }
 
 
