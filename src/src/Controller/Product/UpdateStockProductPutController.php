@@ -21,7 +21,7 @@ class UpdateStockProductPutController
 
     public function __invoke(Request $request)
     {
-        $name = $request->request->get('product');
+        $name  = $request->request->get('product');
         $stock = $request->request->get('stock');
 
         $useCase = new ProductUpdateStock(new FileProductRepository());

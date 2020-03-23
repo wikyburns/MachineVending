@@ -21,7 +21,7 @@ class CreateProductPostController
 
     public function __invoke(Request $request)
     {
-        $name = $request->request->get('product');
+        $name  = $request->request->get('product');
         $price = $request->request->get('price');
         $stock = $request->request->get('stock');
 
