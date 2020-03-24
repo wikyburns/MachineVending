@@ -70,6 +70,8 @@ class BuyProduct
 
     private function returnMoney(string $release)
     {
+
+        // TODO: Refactor this part, a lot of code for simple logic.
         $returnMoney = $release;
         $coinsReturned = array();
 
