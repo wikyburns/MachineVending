@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: sebas
  * Date: 23/03/2020
- * Time: 13:43
+ * Time: 16:33
  */
 
 namespace App\Coin\Domain;
@@ -11,24 +11,25 @@ namespace App\Coin\Domain;
 
 use App\shared\Domain\DomainError;
 
-class NotValidCoinException extends DomainError
+class CoinNotExist extends DomainError
 {
-    private $coin;
+    private $value;
 
-    public function __construct(string $coin)
+    public function __construct(CoinValue $value)
     {
-        $this->coin = $coin;
+        $this->value = $value;
 
         parent::__construct();
     }
 
     public function errorCode(): string
     {
-        return 'coin_not_valid';
+        return 'coin_not_exist';
     }
 
     protected function errorMessage(): string
     {
-        return sprintf('Not valid coin <%s>', $this->coin);
+        return sprintf('The coin <%s> does not exist', $this->value->value());
     }
+
 }
