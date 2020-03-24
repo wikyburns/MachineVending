@@ -1,14 +1,33 @@
-index:
+product_create:
     path: /product
     controller: App\Controller\Product\CreateProductPostController
     methods: [POST]
 
-find:
+product_find:
     path: /product
     controller: App\Controller\Product\FindProductGetController
     methods: [GET]
 
-update:
+product_update:
     path: /product
     controller: App\Controller\Product\UpdateStockProductPutController
     methods: [PUT]
+
+product_buy:
+    path: /product/buy
+    controller: App\Controller\Product\BuyProductGetController
+    methods: [GET]
+
+########
+# Coin #
+########
+
+coin_create:
+    path: /coin
+    controller: App\Controller\Coin\CreateCoinPostController
+    methods: [POST]
+
+coin_find:
+    path: /coin
+    controller: App\Controller\Coin\FindCoinGetController
+    methods: [GET]
