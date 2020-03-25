@@ -15,7 +15,7 @@ use App\Coin\Infrastructure\Persistance\FileCoinRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class CreateCoinPostController
+final class CreateCoinPostController
 {
 
     public function __invoke(Request $request)

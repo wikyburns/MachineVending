@@ -12,7 +12,7 @@ use App\Coin\Domain\Coin;
 use App\Coin\Domain\CoinRepository;
 use App\Coin\Domain\CoinValue;
 
-class FileCoinRepository implements CoinRepository
+final class FileCoinRepository implements CoinRepository
 {
     private const FILE_PATH = __DIR__ . '/coin';
 

@@ -10,7 +10,7 @@ namespace App\Coin\Domain;
 
 use App\shared\Domain\ValueObjects\FloatValueObject;
 
-class CoinValue extends FloatValueObject
+final class CoinValue extends FloatValueObject
 {
     private const FIVE_CENTS = 0.05;
     private const TEN_CENTS = 0.10;

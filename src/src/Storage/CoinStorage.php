@@ -70,6 +70,7 @@ final class CoinStorage
         foreach($this->coins() as $coinKey => $coin) {
             $coinInMachine = $this->repository->findByValue($coin->value());
 
+            $this->decreaseTotalValue($coin);
             $coinInMachine->increaseStock();
             $this->repository->save($coinInMachine);
 

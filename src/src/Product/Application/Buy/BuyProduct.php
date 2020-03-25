@@ -8,16 +8,13 @@
 
 namespace App\Product\Application\Buy;
 
-
-use App\Coin\Domain\Coin;
-use App\Coin\Domain\CoinNotExist;
 use App\Coin\Domain\CoinRepository;
 use App\Coin\Domain\CoinValue;
 use App\Product\Domain\Product;
 use App\Product\Domain\ProductRepository;
 use App\Storage\CoinStorage;
 
-class BuyProduct
+final class BuyProduct
 {
     private $productRepository;
     private $coinRepository;
@@ -92,7 +89,7 @@ class BuyProduct
                 $returnMoney -= $twentyFiveCent->value()->value();
                 array_push($coinsReturned, $twentyFiveCent->value()->value());
 
-            } else if($returnMoney >= 0.10){
+            } else if($returnMoney >= 0.10) {
 
                 $tenCents = $this->coinRepository->findByValue(new CoinValue(0.10));
                 $tenCents->decreaseStock();

@@ -13,7 +13,7 @@ use App\Coin\Domain\CoinName;
 use App\Coin\Domain\CoinStock;
 use App\Coin\Domain\CoinValue;
 
-class CoinCreatorRequest
+final class CoinCreatorRequest
 {
     private $name;
     private $value;

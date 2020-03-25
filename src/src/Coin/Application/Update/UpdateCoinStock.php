@@ -12,7 +12,7 @@ namespace App\Coin\Application\Update;
 use App\Coin\Domain\CoinRepository;
 use App\Coin\Domain\CoinValue;
 
-class UpdateCoinStock
+final class UpdateCoinStock
 {
     private $repository;
 

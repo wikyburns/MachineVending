@@ -15,7 +15,7 @@ use App\Product\Infrastructure\Persistance\FileProductRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class FindProductGetController
+final class FindProductGetController
 {
     public function __invoke(Request $request)
     {

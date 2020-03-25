@@ -13,7 +13,7 @@ namespace App\Product\Domain;
 use App\shared\Domain\ValueObjects\StringValueObject;
 use DomainException;
 
-class ProductName extends StringValueObject
+final class ProductName extends StringValueObject
 {
     private const WATER = 'water';
     private const SODA = 'soda';

@@ -12,7 +12,7 @@ namespace App\Product\Domain;
 use App\shared\Domain\ValueObjects\FloatValueObject;
 use DomainException;
 
-class ProductPrice extends FloatValueObject
+final class ProductPrice extends FloatValueObject
 {
     public function __construct(float $value)
     {

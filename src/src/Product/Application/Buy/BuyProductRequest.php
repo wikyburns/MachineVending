@@ -13,7 +13,7 @@ use App\Coin\Domain\Coin;
 use App\Coin\Domain\CoinValue;
 use App\Product\Domain\ProductName;
 
-class BuyProductRequest
+final class BuyProductRequest
 {
     private $product;
     private $coins = [];

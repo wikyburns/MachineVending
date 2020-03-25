@@ -12,7 +12,7 @@ namespace App\Coin\Application\Create;
 use App\Coin\Domain\Coin;
 use App\Coin\Domain\CoinRepository;
 
-class CoinCreator
+final class CoinCreator
 {
     private $repository;
 

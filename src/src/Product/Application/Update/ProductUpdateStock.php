@@ -14,7 +14,7 @@ use App\Product\Domain\ProductName;
 use App\Product\Domain\ProductRepository;
 use App\Product\Domain\ProductStock;
 
-class ProductUpdateStock
+final class ProductUpdateStock
 {
     private $repository;
     private $finder;

@@ -14,7 +14,7 @@ use App\Coin\Domain\CoinNotExist;
 use App\Coin\Domain\CoinRepository;
 use App\Coin\Domain\CoinValue;
 
-class CoinFinder
+final class CoinFinder
 {
 
     private $repository;

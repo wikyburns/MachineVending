@@ -13,7 +13,7 @@ use App\Product\Domain\Product;
 use App\Product\Domain\ProductName;
 use App\Product\Domain\ProductRepository;
 
-class FileProductRepository implements ProductRepository
+final class FileProductRepository implements ProductRepository
 {
     private const FILE_PATH = __DIR__ . '/products';
 

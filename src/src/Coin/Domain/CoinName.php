@@ -10,7 +10,7 @@ namespace App\Coin\Domain;
 
 use App\shared\Domain\ValueObjects\StringValueObject;
 
-class CoinName extends StringValueObject
+final class CoinName extends StringValueObject
 {
     private const FIVE_CENTS = 'five_cents';
     private const TEN_CENTS = 'ten_cents';

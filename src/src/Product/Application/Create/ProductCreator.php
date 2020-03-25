@@ -13,7 +13,7 @@ namespace App\Product\Application\Create;
 use App\Product\Domain\Product;
 use App\Product\Domain\ProductRepository;
 
-class ProductCreator
+final class ProductCreator
 {
     private $repository;
 

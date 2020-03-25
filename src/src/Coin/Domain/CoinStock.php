@@ -11,7 +11,7 @@ namespace App\Coin\Domain;
 
 use App\shared\Domain\ValueObjects\IntValueObject;
 
-class CoinStock extends IntValueObject
+final class CoinStock extends IntValueObject
 {
     public function __construct(int $value)
     {

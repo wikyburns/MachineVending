@@ -11,7 +11,7 @@ namespace App\Coin\Domain;
 
 use App\shared\Domain\DomainError;
 
-class CoinNotExist extends DomainError
+final class CoinNotExist extends DomainError
 {
     private $value;
 

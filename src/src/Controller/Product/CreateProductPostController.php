@@ -16,7 +16,7 @@ use App\Product\Infrastructure\Persistance\FileProductRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class CreateProductPostController
+final class CreateProductPostController
 {
 
     public function __invoke(Request $request)

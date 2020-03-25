@@ -14,7 +14,7 @@ use App\Product\Domain\ProductName;
 use App\Product\Domain\ProductPrice;
 use App\Product\Domain\ProductStock;
 
-class ProductCreatorRequest
+final class ProductCreatorRequest
 {
     private $name;
     private $price;

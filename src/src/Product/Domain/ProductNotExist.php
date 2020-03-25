@@ -11,7 +11,7 @@ namespace App\Product\Domain;
 
 use App\shared\Domain\DomainError;
 
-class ProductNotExist extends DomainError
+final class ProductNotExist extends DomainError
 {
     private $name;
 

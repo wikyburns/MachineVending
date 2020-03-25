@@ -12,7 +12,7 @@ namespace App\Product\Domain;
 use App\shared\Domain\ValueObjects\IntValueObject;
 use DomainException;
 
-class ProductStock extends IntValueObject
+final class ProductStock extends IntValueObject
 {
     public function __construct(int $value)
     {
