@@ -25,8 +25,12 @@ final class CreateProductPostController
         $price = $request->request->get('price');
         $stock = $request->request->get('stock');
 
+        // TODO: Check what's happening with the variables types(Working fine in CoinPostController)
+
+        $requestDTO = new ProductCreatorRequest($name, (float) $price, (int) $stock);
+
         $useCase = new ProductCreator(new FileProductRepository());
-        $requestDTO = new ProductCreatorRequest($name, $price, $stock);
+
 
         $useCase->create(
             $requestDTO

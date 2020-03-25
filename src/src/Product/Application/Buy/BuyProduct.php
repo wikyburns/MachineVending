@@ -10,7 +10,9 @@ namespace App\Product\Application\Buy;
 
 use App\Coin\Domain\CoinRepository;
 use App\Coin\Domain\CoinValue;
+use App\Product\Application\Find\ProductFinder;
 use App\Product\Domain\Product;
+use App\Product\Domain\ProductName;
 use App\Product\Domain\ProductRepository;
 use App\Storage\CoinStorage;
 
@@ -23,21 +25,26 @@ final class BuyProduct
     private $product;
 
     private $coinStorage;
+    private $productFinder;
 
     public function __construct(ProductRepository $productRepository, CoinRepository $coinRepository)
     {
         $this->productRepository = $productRepository;
         $this->coinRepository = $coinRepository;
+        $this->productFinder = new ProductFinder($productRepository);
+
         $this->coinStorage = new CoinStorage($coinRepository);
     }
 
     public function buy(BuyProductRequest $request)
     {
         $this->coins   = $request->coins();
-        $this->product = $this->productRepository->findByName($request->product());
+        $this->product = $this->productFinder->find(new ProductName($request->product()));
         $product = $this->product;
 
         $this->coinStorage->addCoins(...$request->coins());
+
+        //Find the product
 
         // Check if has enought money for the product
         $this->enoughtMoneyForProduct($product);
@@ -51,7 +58,6 @@ final class BuyProduct
         return array(
             "product" => $this->product->name()->value(),
             "product_price" => $this->product->price()->value(),
-            "value_inserted" => (float) number_format($this->coinStorage->totalValue(), 2),
             "coins_inserted" => $this->coinStorage->toArrayCoins(),
             "coins_returned" => $returnMoney
         );

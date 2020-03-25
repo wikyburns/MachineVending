@@ -23,7 +23,7 @@ final class ProductStock extends IntValueObject
     private function isPositiveNumber(): void
     {
         if($this->value() < 0)
-            throw new DomainException('ProductStock has to be positive');
+            throw new DomainException('ProductStock has to be positive value');
     }
 
 }

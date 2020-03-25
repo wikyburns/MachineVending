@@ -20,11 +20,11 @@ final class ProductCreatorRequest
     private $price;
     private $stock;
 
-    public function __construct(string $name, string $price, string $stock)
+    public function __construct(string $name, float $price, int $stock)
     {
         $this->name = new ProductName($name);
-        $this->price = new ProductPrice((float) $price);
-        $this->stock = new ProductStock((int) $stock);
+        $this->price = new ProductPrice($price);
+        $this->stock = new ProductStock($stock);
     }
 
     public function name(): ProductName

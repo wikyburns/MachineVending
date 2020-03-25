@@ -23,6 +23,6 @@ final class ProductPrice extends FloatValueObject
     private function isPositivePrice(): void
     {
         if($this->value() < 0)
-            throw new DomainException('ProductPrice has to be positive value'.$this->value());
+            throw new DomainException('ProductPrice has to be positive value');
     }
 }
