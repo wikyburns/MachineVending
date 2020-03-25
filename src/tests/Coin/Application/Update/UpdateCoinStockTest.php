@@ -38,9 +38,9 @@ class UpdateCoinStockTest extends TestCase
     /** @test */
     public function increaseTheCoinStockByOne()
     {
-        $coin = new UpdateCoinStock($this->repository);
+        $useCase = new UpdateCoinStock($this->repository);
 
-        $coin->update(new CoinValue(0.05));
+        $useCase->update(new CoinValue(0.05));
 
         $this->assertNull(NULL);
 
