@@ -33,7 +33,7 @@ final class CoinValue extends FloatValueObject
                 self::TWENTY_FIVE_CENTS,
                 self::ONE_EURO)
         ))
-            throw new \DomainException('not valid coin value');
+            throw new \DomainException('not valid coin value '.$this->value());
     }
 
 }
